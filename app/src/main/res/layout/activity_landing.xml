@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:textSize="42sp"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/design_default_color_primary"
         android:text="Globomantics"
         android:layout_marginTop="@dimen/text_margin" />
 
@@ -48,7 +48,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="24dp"
         android:onClick="GetStarted"
-        android:textColor="@color/colorWhite"
-        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:background="@color/purple_700"
         android:text="Get Started"/>
 </LinearLayout>

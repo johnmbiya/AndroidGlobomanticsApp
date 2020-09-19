@@ -1,19 +1,20 @@
-package com.example.alexr.ideamanager;
+package com.johnmbiya.ideamanager;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.alexr.ideamanager.helpers.SampleContent;
-import com.example.alexr.ideamanager.models.Idea;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.johnmbiya.ideamanager.helpers.SampleContent;
+import com.johnmbiya.ideamanager.models.Idea;
 
 import java.util.List;
 

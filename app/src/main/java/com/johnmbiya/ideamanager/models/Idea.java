@@ -1,4 +1,4 @@
-package com.example.alexr.ideamanager.models;
+package com.johnmbiya.ideamanager.models;
 
 public class Idea {
     private int id;

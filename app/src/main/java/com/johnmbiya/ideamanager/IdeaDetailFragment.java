@@ -1,19 +1,21 @@
-package com.example.alexr.ideamanager;
+package com.johnmbiya.ideamanager;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.alexr.ideamanager.helpers.SampleContent;
-import com.example.alexr.ideamanager.models.Idea;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.johnmbiya.ideamanager.helpers.SampleContent;
+import com.johnmbiya.ideamanager.models.Idea;
+
 
 public class IdeaDetailFragment extends Fragment {
 

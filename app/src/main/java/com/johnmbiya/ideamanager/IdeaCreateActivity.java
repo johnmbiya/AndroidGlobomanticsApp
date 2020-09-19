@@ -1,19 +1,19 @@
-package com.example.alexr.ideamanager;
+package com.johnmbiya.ideamanager;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.alexr.ideamanager.helpers.SampleContent;
-import com.example.alexr.ideamanager.models.Idea;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import java.util.Random;
+import com.johnmbiya.ideamanager.helpers.SampleContent;
+import com.johnmbiya.ideamanager.models.Idea;
+
 
 public class IdeaCreateActivity extends AppCompatActivity {
 
