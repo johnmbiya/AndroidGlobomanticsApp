@@ -1,5 +1,6 @@
 package com.johnmbiya.ideamanager;
 
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -15,8 +17,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.johnmbiya.ideamanager.helpers.SampleContent;
 import com.johnmbiya.ideamanager.models.Idea;
+import com.johnmbiya.ideamanager.services.IdeaService;
+import com.johnmbiya.ideamanager.services.ServiceBuilder;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class IdeaListActivity extends AppCompatActivity {
 
@@ -48,7 +56,22 @@ public class IdeaListActivity extends AppCompatActivity {
             mTwoPane = true;
         }
 
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(SampleContent.IDEAS));
+        IdeaService ideaService = ServiceBuilder.buildService(IdeaService.class);
+        Call<List<Idea>> ideasRequest = ideaService.getIdeas("Jim");
+
+        ideasRequest.enqueue(new Callback<List<Idea>>() {
+            @Override
+            public void onResponse(Call<List<Idea>> call, Response<List<Idea>> response) {
+                recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(response.body()));
+            }
+
+            @Override
+            public void onFailure(Call<List<Idea>> call, Throwable t) {
+                Toast.makeText(context, "Faild to retrieve ideas.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+       // recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(SampleContent.IDEAS));
     }
 
 //region Adapter Region
